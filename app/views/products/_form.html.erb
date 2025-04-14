@@ -1,0 +1,20 @@
+<%= form_with model: @product do |f| %>
+  <div>
+    <%= f.label :name, "Name" %>
+    <%= f.text_field :name %>
+  </div>
+
+  <div>
+    <%= f.label :price, "Price" %>
+    <%= f.number_field :price, step: 0.01 %>
+  </div>
+
+  <div>
+    <%= f.label :stock, "Stock" %>
+    <%= f.number_field :stock %>
+  </div>
+
+  <div>
+    <%= f.submit %>
+  </div>
+<% end %>

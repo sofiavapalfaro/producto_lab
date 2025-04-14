@@ -221,3 +221,834 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 36ms (Views: 35.9ms | ActiveRecord: 0.0ms | Allocations: 1463)
 
 
+Started GET "/" for ::1 at 2025-04-14 00:22:53 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 13ms (ActiveRecord: 5.3ms | Allocations: 7265)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:24:20 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 525)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:24:27 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 517)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:24:43 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 522)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:6:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:24:56 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 0ms (ActiveRecord: 0.0ms | Allocations: 524)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:25:15 -0500
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:25:17 -0500
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:26:05 -0500
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:26:29 -0500
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:26:30 -0500
+  [1m[36mProduct Count (0.7ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:26:46 -0500
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:5:in `index'
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" decimal, "stock" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250411184423)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-14 05:29:41.710012', '2025-04-14 05:29:41.710014') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '33cc15d02f1716097e152eeec72b8a1005383704', '2025-04-14 05:29:41.717495', '2025-04-14 05:29:41.717496') RETURNING "key"[0m
+  [1m[35m (0.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "products"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "products" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "price" decimal, "stock" integer, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250411184423)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-04-14 05:29:41.722934', '2025-04-14 05:29:41.722934') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.0ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-04-14 05:29:41.725812' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', '33cc15d02f1716097e152eeec72b8a1005383704', '2025-04-14 05:29:41.729211', '2025-04-14 05:29:41.729211') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Camisa Blanca"], ["price", 19.99], ["stock", 20], ["created_at", "2025-04-14 05:29:41.751746"], ["updated_at", "2025-04-14 05:29:41.751746"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Pantalon Negro"], ["price", 39.99], ["stock", 15], ["created_at", "2025-04-14 05:29:41.753419"], ["updated_at", "2025-04-14 05:29:41.753419"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Jacket de Jean"], ["price", 59.99], ["stock", 8], ["created_at", "2025-04-14 05:29:41.754580"], ["updated_at", "2025-04-14 05:29:41.754580"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Zapatillas"], ["price", 49.99], ["stock", 12], ["created_at", "2025-04-14 05:29:41.755563"], ["updated_at", "2025-04-14 05:29:41.755563"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Gorra Roja"], ["price", 14.99], ["stock", 25], ["created_at", "2025-04-14 05:29:41.756539"], ["updated_at", "2025-04-14 05:29:41.756539"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Vestido Largo"], ["price", 44.99], ["stock", 10], ["created_at", "2025-04-14 05:29:41.757559"], ["updated_at", "2025-04-14 05:29:41.757559"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Camisa con Rayas"], ["price", 29.99], ["stock", 18], ["created_at", "2025-04-14 05:29:41.758555"], ["updated_at", "2025-04-14 05:29:41.758555"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Sudadera Gris"], ["price", 34.99], ["stock", 7], ["created_at", "2025-04-14 05:29:41.759585"], ["updated_at", "2025-04-14 05:29:41.759585"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Botas Azules"], ["price", 69.99], ["stock", 5], ["created_at", "2025-04-14 05:29:41.760580"], ["updated_at", "2025-04-14 05:29:41.760580"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mProduct Create (0.3ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Falda Corta"], ["price", 24.99], ["stock", 14], ["created_at", "2025-04-14 05:29:41.761592"], ["updated_at", "2025-04-14 05:29:41.761592"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mcommit transaction[0m
+Started PUT "/__web_console/repl_sessions/3f700c0ffe6709770ff003140be90c4a" for ::1 at 2025-04-14 00:30:22 -0500
+  [1m[36mProduct Count (0.6ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:30:25 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 3ms (ActiveRecord: 0.0ms | Allocations: 483)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/d4eeee34b85bf024c4917b0f139498d6" for ::1 at 2025-04-14 00:30:32 -0500
+Started PUT "/__web_console/repl_sessions/d4eeee34b85bf024c4917b0f139498d6" for ::1 at 2025-04-14 00:30:34 -0500
+Started PUT "/__web_console/repl_sessions/d4eeee34b85bf024c4917b0f139498d6" for ::1 at 2025-04-14 00:30:38 -0500
+  [1m[36mProduct Count (0.3ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:30:43 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/" for ::1 at 2025-04-14 00:31:05 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1373)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/97bf5d728b8a01362f787215b9493e36" for ::1 at 2025-04-14 00:31:12 -0500
+Started PUT "/__web_console/repl_sessions/97bf5d728b8a01362f787215b9493e36" for ::1 at 2025-04-14 00:31:15 -0500
+Started PUT "/__web_console/repl_sessions/97bf5d728b8a01362f787215b9493e36" for ::1 at 2025-04-14 00:31:17 -0500
+  [1m[36mProduct Count (0.1ms)[0m  [1m[34mSELECT COUNT(*) FROM "products"[0m
+  ↳ app/controllers/products_controller.rb:5:in `index'
+Started GET "/1" for ::1 at 2025-04-14 00:33:34 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/1"):
+  
+Started GET "/products" for ::1 at 2025-04-14 00:33:44 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 483)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products/1" for ::1 at 2025-04-14 00:33:49 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:33:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.7ms | Allocations: 300)
+  Rendered products/show.html.erb within layouts/application (Duration: 3.6ms | Allocations: 576)
+  Rendered layout layouts/application.html.erb (Duration: 34.0ms | Allocations: 33735)
+Completed 200 OK in 74ms (Views: 36.4ms | ActiveRecord: 0.5ms | Allocations: 42536)
+
+
+Started GET "/products" for ::1 at 2025-04-14 00:33:52 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 14ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products" for ::1 at 2025-04-14 00:33:53 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 480)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products/3" for ::1 at 2025-04-14 00:33:59 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:33:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 1836)
+Completed 200 OK in 5ms (Views: 3.6ms | ActiveRecord: 0.2ms | Allocations: 2449)
+
+
+Started GET "/products" for ::1 at 2025-04-14 00:34:01 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/5646b2c31fafd32ffc2b0d0403524ad6" for ::1 at 2025-04-14 00:34:17 -0500
+Started PUT "/__web_console/repl_sessions/5646b2c31fafd32ffc2b0d0403524ad6" for ::1 at 2025-04-14 00:34:20 -0500
+Started GET "/products" for ::1 at 2025-04-14 00:37:04 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products" for ::1 at 2025-04-14 00:37:06 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/d57bb625b9c38f743bdcf046c51e61c0" for ::1 at 2025-04-14 00:37:18 -0500
+Started PUT "/__web_console/repl_sessions/d57bb625b9c38f743bdcf046c51e61c0" for ::1 at 2025-04-14 00:37:20 -0500
+Started PUT "/__web_console/repl_sessions/d57bb625b9c38f743bdcf046c51e61c0" for ::1 at 2025-04-14 00:37:44 -0500
+Started PUT "/__web_console/repl_sessions/d57bb625b9c38f743bdcf046c51e61c0" for ::1 at 2025-04-14 00:38:19 -0500
+Started GET "/products?Falda%20Corta" for ::1 at 2025-04-14 00:40:23 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"Falda Corta"=>nil}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/adaaa65df657c783975d326a8a0583b3" for ::1 at 2025-04-14 00:40:30 -0500
+Started PUT "/__web_console/repl_sessions/adaaa65df657c783975d326a8a0583b3" for ::1 at 2025-04-14 00:40:33 -0500
+Started GET "/products?name=Falda%20Corta" for ::1 at 2025-04-14 00:42:34 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"name"=>"Falda Corta"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started PUT "/__web_console/repl_sessions/2a4d9402f5005a2fd2ac3be4c518e531" for ::1 at 2025-04-14 00:42:37 -0500
+Started PUT "/__web_console/repl_sessions/2a4d9402f5005a2fd2ac3be4c518e531" for ::1 at 2025-04-14 00:42:39 -0500
+Started PUT "/__web_console/repl_sessions/2a4d9402f5005a2fd2ac3be4c518e531" for ::1 at 2025-04-14 00:46:48 -0500
+Started GET "/products?name=Falda%20Corta" for ::1 at 2025-04-14 08:05:03 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"name"=>"Falda Corta"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products" for ::1 at 2025-04-14 08:05:11 -0500
+Processing by ProductsController#index as HTML
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 482)
+
+
+  
+ArgumentError (wrong number of arguments (given 1, expected 0)):
+  
+app/controllers/products_controller.rb:5:in `index'
+Started GET "/products" for ::1 at 2025-04-14 08:05:27 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (4.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:11
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 2.3ms | Allocations: 500)
+  Rendered products/index.html.erb within layouts/application (Duration: 9.6ms | Allocations: 4114)
+  Rendered layout layouts/application.html.erb (Duration: 29.5ms | Allocations: 18944)
+Completed 200 OK in 35ms (Views: 24.9ms | ActiveRecord: 6.0ms | Allocations: 20766)
+
+
+Started GET "/products" for ::1 at 2025-04-14 09:32:56 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.7ms | Allocations: 1252)
+  Rendered layout layouts/application.html.erb (Duration: 0.8ms | Allocations: 1350)
+Completed 500 Internal Server Error in 6ms (ActiveRecord: 0.0ms | Allocations: 3183)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+ <%#= @products.each do |product| %>
+  <%#= product.name %>  <%#= product.price %>
+ <%#= end %>
+
+<p> What are you searching for? </p>
+<%= form_with url: products_path, method: :get do %>
+    <%= text_field_tag :product %>
+    <%= submit_tag :Search %>
+<%= end  %>
+ <%= render @products %>
+
+):
+1:    
+2:     <%#= @products.each do |product| %>
+3:      <%#= product.name %>  <%#= product.price %>
+4:     <%#= end %>
+5:    
+6:    <p> What are you searching for? </p>
+7:    <%= form_with url: products_path, method: :get do %>
+8:        <%= text_field_tag :product %>
+9:        <%= submit_tag :Search %>
+10:    <%= end  %>
+11:     <%= render @products %>
+  
+app/views/products/index.html.erb:11: syntax error, unexpected `end'
+app/views/products/index.html.erb:15: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/products" for ::1 at 2025-04-14 09:35:43 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1220)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 1318)
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 7.6ms | Allocations: 3571)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+ <%#= @products.each do |product| %>
+  <%#= product.name %>  <%#= product.price %>
+ <%#= end %>
+
+<p> What are you searching for? </p>
+<%= form_with url: products_path, method: :get do %>
+    <%= text_field_tag :product %>
+    <%= submit_tag :Search %>
+<%= end  %>
+
+ <%= render @products %>
+
+):
+1:    
+2:     <%#= @products.each do |product| %>
+3:      <%#= product.name %>  <%#= product.price %>
+4:     <%#= end %>
+5:    
+6:    <p> What are you searching for? </p>
+7:    <%= form_with url: products_path, method: :get do %>
+8:        <%= text_field_tag :product %>
+9:        <%= submit_tag :Search %>
+10:    <%= end  %>
+11:    
+12:     <%= render @products %>
+  
+app/views/products/index.html.erb:11: syntax error, unexpected `end'
+app/views/products/index.html.erb:16: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/products" for ::1 at 2025-04-14 09:36:10 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/index.html.erb within layouts/application (Duration: 0.6ms | Allocations: 1210)
+  Rendered layout layouts/application.html.erb (Duration: 0.7ms | Allocations: 1308)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms | Allocations: 3549)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check 
+
+<p> What are you searching for? </p>
+<%= form_with url: products_path, method: :get do %>
+    <%= text_field_tag :product %>
+    <%= submit_tag :Search %>
+<%= end  %>
+
+ <%= render @products %>
+
+):
+1:    
+2:    
+3:    <p> What are you searching for? </p>
+4:    <%= form_with url: products_path, method: :get do %>
+5:        <%= text_field_tag :product %>
+6:        <%= submit_tag :Search %>
+7:    <%= end  %>
+8:    
+9:     <%= render @products %>
+  
+app/views/products/index.html.erb:7: syntax error, unexpected `end'
+app/views/products/index.html.erb:12: syntax error, unexpected end-of-input, expecting `end' or dummy end
+Started GET "/products" for ::1 at 2025-04-14 09:36:41 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 1.5ms | Allocations: 460)
+  Rendered products/index.html.erb within layouts/application (Duration: 5.1ms | Allocations: 4158)
+  Rendered layout layouts/application.html.erb (Duration: 15.6ms | Allocations: 18982)
+Completed 200 OK in 20ms (Views: 16.1ms | ActiveRecord: 1.9ms | Allocations: 21199)
+
+
+Started GET "/products?product=Falda&commit=Search" for ::1 at 2025-04-14 09:36:56 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"product"=>"Falda", "commit"=>"Search"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Falda"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.8ms | Allocations: 330)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.1ms | Allocations: 1044)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 2743)
+Completed 200 OK in 12ms (Views: 7.6ms | ActiveRecord: 0.6ms | Allocations: 3545)
+
+
+Started GET "/products?product=Falda+Corta&commit=Search" for ::1 at 2025-04-14 09:37:05 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"product"=>"Falda Corta", "commit"=>"Search"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Falda Corta"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.9ms | Allocations: 143)
+  Rendered products/index.html.erb within layouts/application (Duration: 6.5ms | Allocations: 553)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 2261)
+Completed 200 OK in 13ms (Views: 10.5ms | ActiveRecord: 0.2ms | Allocations: 2867)
+
+
+Started GET "/products?product=Falda&commit=Search" for ::1 at 2025-04-14 09:40:43 -0500
+Processing by ProductsController#index as HTML
+  Parameters: {"product"=>"Falda", "commit"=>"Search"}
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."name" = ? LIMIT ?[0m  [["name", "Falda"], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:6:in `index'
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.5ms | Allocations: 460)
+  Rendered products/index.html.erb within layouts/application (Duration: 2.7ms | Allocations: 4068)
+  Rendered layout layouts/application.html.erb (Duration: 10.0ms | Allocations: 18905)
+Completed 200 OK in 15ms (Views: 10.7ms | ActiveRecord: 1.1ms | Allocations: 21639)
+
+
+Started GET "/products/10" for ::1 at 2025-04-14 09:40:45 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:34:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.7ms | Allocations: 156)
+  Rendered products/show.html.erb within layouts/application (Duration: 2.0ms | Allocations: 367)
+  Rendered layout layouts/application.html.erb (Duration: 5.7ms | Allocations: 1986)
+Completed 200 OK in 13ms (Views: 6.4ms | ActiveRecord: 1.0ms | Allocations: 3248)
+
+
+Started GET "/products/10/edit" for ::1 at 2025-04-14 09:40:51 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:34:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/edit.html.erb within layouts/application (Duration: 8.5ms | Allocations: 1732)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3266)
+Completed 200 OK in 14ms (Views: 11.1ms | ActiveRecord: 0.2ms | Allocations: 3933)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:40:59 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 2.2ms | Allocations: 713)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | Allocations: 2251)
+Completed 200 OK in 7ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2597)
+
+
+Started GET "/products" for ::1 at 2025-04-14 09:42:18 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.4ms | Allocations: 454)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.2ms | Allocations: 4126)
+  Rendered layout layouts/application.html.erb (Duration: 11.9ms | Allocations: 18954)
+Completed 200 OK in 17ms (Views: 13.3ms | ActiveRecord: 1.5ms | Allocations: 21176)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:42:20 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 3.7ms | Allocations: 854)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 2394)
+Completed 200 OK in 10ms (Views: 8.0ms | ActiveRecord: 0.0ms | Allocations: 2720)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:42:28 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 2.4ms | Allocations: 542)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2080)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.0ms | Allocations: 2334)
+
+
+Started POST "/products" for ::1 at 2025-04-14 09:42:41 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"title"=>"Jean Shorts"}, "commit"=>"Create Product"}
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 692)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:49:12 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 828)
+  Rendered layout layouts/application.html.erb (Duration: 15.2ms | Allocations: 15499)
+Completed 200 OK in 22ms (Views: 16.2ms | ActiveRecord: 1.2ms | Allocations: 20137)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:49:31 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 1186)
+  Rendered layout layouts/application.html.erb (Duration: 0.6ms | Allocations: 1281)
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.6ms | Allocations: 5968)
+
+
+  
+ActionView::SyntaxErrorInTemplate (Encountered a syntax error while rendering template: check <%= form_with model: @product do |f| %>
+  <%= f.label :Product Name %>
+  <%= f.text_field :name %>
+  <%= f.submit %>
+<% end %>
+
+):
+1:    <%= form_with model: @product do |f| %>
+2:      <%= f.label :Product Name %>
+3:      <%= f.text_field :name %>
+4:      <%= f.submit %>
+5:    <% end %>
+  
+app/views/products/new.html.erb:2: syntax error, unexpected constant, expecting ')'
+Started GET "/products/new" for ::1 at 2025-04-14 09:49:39 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 839)
+  Rendered layout layouts/application.html.erb (Duration: 9.4ms | Allocations: 15548)
+Completed 200 OK in 16ms (Views: 10.8ms | ActiveRecord: 1.8ms | Allocations: 20222)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:57:14 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.8ms | Allocations: 1127)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.3ms | Allocations: 1365)
+  Rendered layout layouts/application.html.erb (Duration: 10.1ms | Allocations: 16017)
+Completed 200 OK in 15ms (Views: 11.0ms | ActiveRecord: 0.0ms | Allocations: 20074)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:57:59 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.1ms | Allocations: 979)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.5ms | Allocations: 1213)
+  Rendered layout layouts/application.html.erb (Duration: 9.0ms | Allocations: 15874)
+Completed 200 OK in 18ms (Views: 10.2ms | ActiveRecord: 1.9ms | Allocations: 20533)
+
+
+Started POST "/products" for ::1 at 2025-04-14 09:58:26 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Jean Shorts", "price"=>"9.50", "stock"=>"10"}, "commit"=>"Create Product"}
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 4ms (ActiveRecord: 0.0ms | Allocations: 614)
+
+
+Started GET "/products" for ::1 at 2025-04-14 09:58:33 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 3.6ms | Allocations: 451)
+  Rendered products/index.html.erb within layouts/application (Duration: 7.8ms | Allocations: 1532)
+  Rendered layout layouts/application.html.erb (Duration: 12.4ms | Allocations: 3253)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 0.3ms | Allocations: 3671)
+
+
+Started GET "/products/1" for ::1 at 2025-04-14 09:58:38 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (1.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:34:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.7ms | Allocations: 155)
+  Rendered products/show.html.erb within layouts/application (Duration: 1.9ms | Allocations: 366)
+  Rendered layout layouts/application.html.erb (Duration: 5.0ms | Allocations: 1978)
+Completed 200 OK in 12ms (Views: 5.9ms | ActiveRecord: 1.0ms | Allocations: 3265)
+
+
+Started GET "/products/new" for ::1 at 2025-04-14 09:58:41 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.5ms | Allocations: 618)
+  Rendered products/new.html.erb within layouts/application (Duration: 3.9ms | Allocations: 681)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 2219)
+Completed 200 OK in 11ms (Views: 9.0ms | ActiveRecord: 0.0ms | Allocations: 2472)
+
+
+Started POST "/products" for ::1 at 2025-04-14 09:58:58 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Jean Shorts", "price"=>"8.90", "stock"=>"10"}, "commit"=>"Create Product"}
+No template found for ProductsController#create, rendering head :no_content
+Completed 204 No Content in 2ms (ActiveRecord: 0.0ms | Allocations: 346)
+
+
+Started PUT "/__web_console/repl_sessions/c6b40f7bbe1100f55adc4407acebf019" for ::1 at 2025-04-14 09:59:05 -0500
+Started PUT "/__web_console/repl_sessions/c6b40f7bbe1100f55adc4407acebf019" for ::1 at 2025-04-14 09:59:07 -0500
+Started PUT "/__web_console/repl_sessions/c6b40f7bbe1100f55adc4407acebf019" for ::1 at 2025-04-14 09:59:08 -0500
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" /* loading for inspect */ LIMIT ?[0m  [["LIMIT", 11]]
+Started GET "/products/new" for ::1 at 2025-04-14 10:47:13 -0500
+Processing by ProductsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.9ms | Allocations: 962)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.3ms | Allocations: 1198)
+  Rendered layout layouts/application.html.erb (Duration: 19.9ms | Allocations: 15850)
+Completed 200 OK in 25ms (Views: 21.0ms | ActiveRecord: 0.0ms | Allocations: 19926)
+
+
+Started POST "/products" for ::1 at 2025-04-14 10:47:34 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Jean Shorts", "price"=>"11.80", "stock"=>"13"}, "commit"=>"Create Product"}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:20:in `create'
+  [1m[36mProduct Create (9.7ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Jean Shorts"], ["price", 11.8], ["stock", 13], ["created_at", "2025-04-14 15:47:34.056618"], ["updated_at", "2025-04-14 15:47:34.056618"]]
+  ↳ app/controllers/products_controller.rb:20:in `create'
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:20:in `create'
+Redirected to http://[::1]:3000/products/11
+Completed 302 Found in 24ms (ActiveRecord: 14.2ms | Allocations: 3250)
+
+
+Started GET "/products/11" for ::1 at 2025-04-14 10:47:34 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 164)
+  Rendered products/show.html.erb within layouts/application (Duration: 1.2ms | Allocations: 467)
+  Rendered layout layouts/application.html.erb (Duration: 2.7ms | Allocations: 2088)
+Completed 200 OK in 6ms (Views: 3.0ms | ActiveRecord: 0.3ms | Allocations: 3499)
+
+
+Started GET "/products" for ::1 at 2025-04-14 10:47:35 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [11 times] (Duration: 2.5ms | Allocations: 474)
+  Rendered products/index.html.erb within layouts/application (Duration: 7.3ms | Allocations: 1482)
+  Rendered layout layouts/application.html.erb (Duration: 10.6ms | Allocations: 3210)
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.5ms | Allocations: 3574)
+
+
+Started GET "/products/11" for ::1 at 2025-04-14 10:47:39 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 1816)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 2419)
+
+
+Started GET "/products/11" for ::1 at 2025-04-14 10:47:40 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 5.5ms | Allocations: 1837)
+Completed 200 OK in 9ms (Views: 6.3ms | ActiveRecord: 0.3ms | Allocations: 2440)
+
+
+Started GET "/products/1/edit" for ::1 at 2025-04-14 10:48:02 -0500
+Processing by ProductsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/edit.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.4ms | Allocations: 636)
+  Rendered products/edit.html.erb within layouts/application (Duration: 3.5ms | Allocations: 799)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 2334)
+Completed 200 OK in 10ms (Views: 6.5ms | ActiveRecord: 0.1ms | Allocations: 3001)
+
+
+Started PATCH "/products/1" for ::1 at 2025-04-14 10:48:06 -0500
+Processing by ProductsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Camisa Blanca", "price"=>"20", "stock"=>"20"}, "commit"=>"Update Product", "id"=>"1"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:28:in `update'
+  [1m[36mProduct Update (1.5ms)[0m  [1m[33mUPDATE "products" SET "price" = ?, "updated_at" = ? WHERE "products"."id" = ?[0m  [["price", 20.0], ["updated_at", "2025-04-14 15:48:06.345302"], ["id", 1]]
+  ↳ app/controllers/products_controller.rb:28:in `update'
+  [1m[36mTRANSACTION (0.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:28:in `update'
+Redirected to http://[::1]:3000/products/1
+Completed 302 Found in 9ms (ActiveRecord: 2.3ms | Allocations: 2470)
+
+
+Started GET "/products/1" for ::1 at 2025-04-14 10:48:06 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.2ms | Allocations: 49)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.4ms | Allocations: 128)
+  Rendered layout layouts/application.html.erb (Duration: 2.5ms | Allocations: 1827)
+Completed 200 OK in 4ms (Views: 2.9ms | ActiveRecord: 0.1ms | Allocations: 2433)
+
+
+Started GET "/products" for ::1 at 2025-04-14 10:48:07 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [11 times] (Duration: 1.0ms | Allocations: 362)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.8ms | Allocations: 1102)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 2818)
+Completed 200 OK in 13ms (Views: 11.8ms | ActiveRecord: 0.2ms | Allocations: 3098)
+
+
+Started GET "/products/10" for ::1 at 2025-04-14 10:48:54 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"10"}
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.9ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 1.3ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 8.6ms | Allocations: 1842)
+Completed 200 OK in 16ms (Views: 9.8ms | ActiveRecord: 0.5ms | Allocations: 2445)
+
+
+Started GET "/products/1" for ::1 at 2025-04-14 10:48:57 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.5ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.8ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 6.3ms | Allocations: 1822)
+Completed 200 OK in 11ms (Views: 7.1ms | ActiveRecord: 0.4ms | Allocations: 2425)
+
+
+Started GET "/products/4" for ::1 at 2025-04-14 10:49:02 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.7ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 1816)
+Completed 200 OK in 9ms (Views: 6.4ms | ActiveRecord: 0.3ms | Allocations: 2419)
+
+
+Started GET "/products/4" for ::1 at 2025-04-14 10:49:03 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mProduct Load (0.4ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:39:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.2ms | Allocations: 47)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.5ms | Allocations: 126)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 1829)
+Completed 200 OK in 7ms (Views: 4.3ms | ActiveRecord: 0.4ms | Allocations: 2433)
+
+
