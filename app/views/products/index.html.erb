@@ -1,0 +1,10 @@
+
+ <%#= @products.each do |product| %>
+  <%#= product.name %>  <%#= product.price %>
+ <%#= end %>
+
+<p> What are you searching for? </p>
+<input type="text" name="product">
+<input type="Submit" name="Search">
+
+ <%= render @products %>
