@@ -69,3 +69,9 @@ end
 gem "ostruct", "~> 0.6.1"
 
 gem "devise", "~> 4.9"
+
+gem "bootstrap", "~> 5.3"
+
+gem "sassc-rails", "~> 2.1"
+
+gem "simple_form", "~> 5.3"
