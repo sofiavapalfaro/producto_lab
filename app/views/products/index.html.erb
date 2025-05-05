@@ -1,8 +1,10 @@
 <p> What are you searching for? </p>
-<%= link_to "Add New Product", new_product_path %>
+<%= link_to "Add New Product", new_product_path, data: {turbo_frame: "new_product"} %>
 <%= form_with url: products_path, method: :get do %>
     <%= text_field_tag :product %>
     <%= submit_tag :Search %>
 <% end  %>
-
- <%= render @products %>
+<%= turbo_frame_tag "new_product" %>
+<%= turbo_frame_tag "products" do %>
+  <%= render @products %>
+<% end %>

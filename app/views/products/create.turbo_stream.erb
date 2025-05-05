@@ -1,0 +1,2 @@
+<%= turbo_stream.prepend "products", partial: "products/product", locals: {product: @product} %>
+<%= turbo_stream.remove "new_product" %>

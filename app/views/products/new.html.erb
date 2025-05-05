@@ -1,2 +1,6 @@
 <p> Add A New Product </p>
-<%= render "form" %>
+<%= turbo_frame_tag "new_product" do %>
+  <%= render "form" %>
+<% end %>
+<%# <turbo-frame id="new_product"> %>
+<%# </turbo-frame> %>

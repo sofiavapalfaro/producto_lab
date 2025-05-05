@@ -993,3 +993,597 @@ Processing by ProductsController#new as HTML
 Completed 200 OK in 11ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 7241)
 
 
+Started GET "/" for ::1 at 2025-05-05 08:05:42 -0500
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PagesController#home as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.2ms | Allocations: 182)
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 520)
+  Rendered layout layouts/application.html.erb (Duration: 42.0ms | Allocations: 51315)
+Completed 200 OK in 49ms (Views: 44.3ms | ActiveRecord: 0.0ms | Allocations: 55672)
+
+
+Started GET "/users/sign_in" for ::1 at 2025-05-05 08:05:47 -0500
+Processing by Devise::SessionsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering devise/sessions/new.html.erb within layouts/application
+  Rendered devise/shared/_links.html.erb (Duration: 0.6ms | Allocations: 536)
+  Rendered devise/sessions/new.html.erb within layouts/application (Duration: 6.0ms | Allocations: 3082)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 84)
+  Rendered layout layouts/application.html.erb (Duration: 19.6ms | Allocations: 8230)
+Completed 200 OK in 34ms (Views: 21.3ms | ActiveRecord: 1.3ms | Allocations: 17850)
+
+
+Started POST "/users/sign_in" for ::1 at 2025-05-05 08:05:53 -0500
+Processing by Devise::SessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"sofia@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"Log in"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["email", "sofia@gmail.com"], ["LIMIT", 1]]
+Redirected to http://[::1]:3000/
+Completed 303 See Other in 278ms (ActiveRecord: 0.2ms | Allocations: 6766)
+
+
+Started GET "/" for ::1 at 2025-05-05 08:05:53 -0500
+Processing by PagesController#home as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering pages/home.html.erb within layouts/application
+  Rendered pages/home.html.erb within layouts/application (Duration: 0.0ms | Allocations: 7)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 730)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 6016)
+Completed 200 OK in 4ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 6305)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:06:04 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 2.0ms | Allocations: 993)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.7ms | Allocations: 1222)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 47)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 6303)
+Completed 200 OK in 17ms (Views: 7.1ms | ActiveRecord: 0.5ms | Allocations: 13164)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:06:21 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Jeans", "price"=>"13", "stock"=>"4"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mProduct Create (1.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Jeans"], ["price", 13.0], ["stock", 4], ["created_at", "2025-05-05 13:06:21.342448"], ["updated_at", "2025-05-05 13:06:21.342448"], ["user_id", nil]]
+  ↳ app/controllers/products_controller.rb:21:in `create'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ app/controllers/products_controller.rb:21:in `create'
+Completed 500 Internal Server Error in 10ms (ActiveRecord: 3.6ms | Allocations: 5605)
+
+
+  
+ActiveRecord::NotNullViolation (SQLite3::ConstraintException: NOT NULL constraint failed: products.user_id):
+  
+Started GET "/products/new" for ::1 at 2025-05-05 08:15:16 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 3.4ms | Allocations: 800)
+  Rendered products/new.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1032)
+  Rendered layouts/_navbar.html.erb (Duration: 0.6ms | Allocations: 246)
+  Rendered layout layouts/application.html.erb (Duration: 17.3ms | Allocations: 24429)
+Completed 200 OK in 27ms (Views: 18.5ms | ActiveRecord: 1.8ms | Allocations: 34173)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:15:27 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Jacket", "price"=>"42", "stock"=>""}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (0.8ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Jacket"], ["price", 42.0], ["stock", nil], ["created_at", "2025-05-05 13:15:27.802298"], ["updated_at", "2025-05-05 13:15:27.802298"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+Redirected to http://[::1]:3000/products/11
+Completed 302 Found in 20ms (ActiveRecord: 1.2ms | Allocations: 8324)
+
+
+Started GET "/products/11" for ::1 at 2025-05-05 08:15:27 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 274)
+  Rendered products/show.html.erb within layouts/application (Duration: 1.1ms | Allocations: 578)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 648)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 6345)
+Completed 200 OK in 7ms (Views: 5.6ms | ActiveRecord: 0.1ms | Allocations: 7793)
+
+
+Started DELETE "/products/11?_method=delete" for ::1 at 2025-05-05 08:15:35 -0500
+Processing by ProductsController#destroy as TURBO_STREAM
+  Parameters: {"id"=>"11"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mProduct Load (0.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:37:in `destroy'
+  [1m[36mProduct Destroy (0.7ms)[0m  [1m[31mDELETE FROM "products" WHERE "products"."id" = ?[0m  [["id", 11]]
+  ↳ app/controllers/products_controller.rb:37:in `destroy'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:37:in `destroy'
+Redirected to http://[::1]:3000/products
+Completed 302 Found in 4ms (ActiveRecord: 1.0ms | Allocations: 3174)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:15:35 -0500
+Processing by ProductsController#index as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.6ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.7ms | Allocations: 545)
+  Rendered products/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 1634)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 1.0ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 7488)
+Completed 200 OK in 9ms (Views: 8.1ms | ActiveRecord: 0.6ms | Allocations: 7879)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:16:09 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.6ms | Allocations: 445)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.8ms | Allocations: 508)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 5583)
+Completed 200 OK in 12ms (Views: 8.0ms | ActiveRecord: 0.2ms | Allocations: 7221)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:18:02 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.1ms | Allocations: 445)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.3ms | Allocations: 508)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 6.6ms | Allocations: 5583)
+Completed 200 OK in 10ms (Views: 6.9ms | ActiveRecord: 0.2ms | Allocations: 7181)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:21:30 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.0ms | Allocations: 798)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1106)
+  Rendered layouts/_navbar.html.erb (Duration: 1.5ms | Allocations: 246)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 24499)
+Completed 200 OK in 33ms (Views: 19.8ms | ActiveRecord: 1.6ms | Allocations: 35089)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:25:18 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.7ms | Allocations: 532)
+  Rendered products/index.html.erb within layouts/application (Duration: 2.9ms | Allocations: 4485)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.4ms | Allocations: 4584)
+  Rendered layout layouts/application.html.erb (Duration: 16.9ms | Allocations: 32488)
+Completed 200 OK in 21ms (Views: 17.4ms | ActiveRecord: 1.5ms | Allocations: 34568)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:25:23 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 0.9ms | Allocations: 731)
+  Rendered products/new.html.erb within layouts/application (Duration: 1.7ms | Allocations: 1045)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 5.4ms | Allocations: 6124)
+Completed 200 OK in 10ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 8508)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:27:00 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.3ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.9ms | Allocations: 532)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.4ms | Allocations: 4519)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.8ms | Allocations: 4561)
+  Rendered layout layouts/application.html.erb (Duration: 18.5ms | Allocations: 32419)
+Completed 200 OK in 22ms (Views: 18.6ms | ActiveRecord: 1.9ms | Allocations: 34500)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:27:02 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering products/new.html.erb within layouts/application
+  Rendered products/_form.html.erb (Duration: 1.2ms | Allocations: 732)
+  Rendered products/new.html.erb within layouts/application (Duration: 2.1ms | Allocations: 1045)
+  Rendered layouts/_navbar.html.erb (Duration: 0.1ms | Allocations: 46)
+  Rendered layout layouts/application.html.erb (Duration: 6.5ms | Allocations: 6126)
+Completed 200 OK in 12ms (Views: 7.1ms | ActiveRecord: 0.1ms | Allocations: 8535)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:28:45 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.5ms | Allocations: 533)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 4530)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.9ms | Allocations: 4562)
+  Rendered layout layouts/application.html.erb (Duration: 20.3ms | Allocations: 32420)
+Completed 200 OK in 24ms (Views: 20.9ms | ActiveRecord: 2.0ms | Allocations: 34500)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:28:46 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 0.9ms | Allocations: 731)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 1.5ms | Allocations: 1045)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.8ms | Allocations: 1270)
+Completed 200 OK in 11ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 3863)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:28:56 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [10 times] (Duration: 0.6ms | Allocations: 370)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.7ms | Allocations: 1129)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.9ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 8.4ms | Allocations: 7004)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.2ms | Allocations: 7289)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:29:02 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 2.0ms | Allocations: 444)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 2.2ms | Allocations: 534)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 3.1ms | Allocations: 635)
+Completed 200 OK in 8ms (Views: 3.4ms | ActiveRecord: 0.1ms | Allocations: 2202)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:31:40 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Glasses", "price"=>"13", "stock"=>"9"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (2.4ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Glasses"], ["price", 13.0], ["stock", 9], ["created_at", "2025-05-05 13:31:40.262977"], ["updated_at", "2025-05-05 13:31:40.262977"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+Redirected to http://[::1]:3000/products/12
+Completed 302 Found in 17ms (ActiveRecord: 2.9ms | Allocations: 3871)
+
+
+Started GET "/products/12" for ::1 at 2025-05-05 08:31:40 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"12"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 12], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/show.html.erb within layouts/turbo_rails/frame
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 253)
+  Rendered products/show.html.erb within layouts/turbo_rails/frame (Duration: 0.8ms | Allocations: 510)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 0.8ms | Allocations: 611)
+Completed 200 OK in 2ms (Views: 1.1ms | ActiveRecord: 0.1ms | Allocations: 1919)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:33:20 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [11 times] (Duration: 0.3ms | Allocations: 406)
+  Rendered products/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 1175)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 5.6ms | Allocations: 7032)
+Completed 200 OK in 6ms (Views: 5.7ms | ActiveRecord: 0.1ms | Allocations: 7317)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:34:41 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 0.5ms | Allocations: 444)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 0.9ms | Allocations: 534)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 0.9ms | Allocations: 635)
+Completed 200 OK in 3ms (Views: 1.2ms | ActiveRecord: 0.1ms | Allocations: 2215)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:34:58 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Laptop", "price"=>"100", "stock"=>"30"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Laptop"], ["price", 100.0], ["stock", 30], ["created_at", "2025-05-05 13:34:58.026817"], ["updated_at", "2025-05-05 13:34:58.026817"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+Redirected to http://[::1]:3000/products/13
+Completed 302 Found in 8ms (ActiveRecord: 0.8ms | Allocations: 3198)
+
+
+Started GET "/products/13" for ::1 at 2025-05-05 08:34:58 -0500
+Processing by ProductsController#show as TURBO_STREAM
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/show.html.erb within layouts/turbo_rails/frame
+  Rendered products/_product.html.erb (Duration: 0.1ms | Allocations: 106)
+  Rendered products/show.html.erb within layouts/turbo_rails/frame (Duration: 0.2ms | Allocations: 185)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 0.3ms | Allocations: 286)
+Completed 200 OK in 2ms (Views: 0.5ms | ActiveRecord: 0.1ms | Allocations: 866)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:35:05 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:8
+  Rendered collection of products/_product.html.erb [12 times] (Duration: 1.5ms | Allocations: 442)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.3ms | Allocations: 1221)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 1.1ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 10.5ms | Allocations: 7086)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.2ms | Allocations: 7370)
+
+
+Started GET "/products/13" for ::1 at 2025-05-05 08:35:07 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:45:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.2ms | Allocations: 106)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.3ms | Allocations: 185)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.7ms | Allocations: 648)
+  Rendered layout layouts/application.html.erb (Duration: 4.0ms | Allocations: 6044)
+Completed 200 OK in 7ms (Views: 4.2ms | ActiveRecord: 0.2ms | Allocations: 6652)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:40:29 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 0.9ms | Allocations: 802)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 4.4ms | Allocations: 1124)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 4.6ms | Allocations: 1348)
+Completed 200 OK in 15ms (Views: 5.5ms | ActiveRecord: 1.7ms | Allocations: 11971)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:43:38 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 0.8ms | Allocations: 797)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 1.5ms | Allocations: 1119)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.7ms | Allocations: 1343)
+Completed 200 OK in 13ms (Views: 3.0ms | ActiveRecord: 1.6ms | Allocations: 11962)
+
+
+Started GET "/products/13" for ::1 at 2025-05-05 08:55:49 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"13"}
+  [1m[36mProduct Load (1.0ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 13], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:51:in `set_product'
+  Rendering layout layouts/application.html.erb
+  Rendering products/show.html.erb within layouts/application
+  Rendered products/_product.html.erb (Duration: 0.4ms | Allocations: 294)
+  Rendered products/show.html.erb within layouts/application (Duration: 0.9ms | Allocations: 557)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.2ms | Allocations: 4200)
+  Rendered layout layouts/application.html.erb (Duration: 22.2ms | Allocations: 28137)
+Completed 200 OK in 30ms (Views: 23.4ms | ActiveRecord: 1.8ms | Allocations: 33477)
+
+
+Started GET "/products" for ::1 at 2025-05-05 08:56:34 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.5ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [12 times] (Duration: 0.6ms | Allocations: 590)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.0ms | Allocations: 1736)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 0.8ms | Allocations: 649)
+  Rendered layout layouts/application.html.erb (Duration: 7.8ms | Allocations: 7603)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms | Allocations: 7972)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:56:38 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 0.8ms | Allocations: 731)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 1.3ms | Allocations: 1042)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.6ms | Allocations: 1263)
+Completed 200 OK in 20ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 6253)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:56:51 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Tomates", "price"=>"2", "stock"=>"13"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (0.6ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Tomates"], ["price", 2.0], ["stock", 13], ["created_at", "2025-05-05 13:56:51.913582"], ["updated_at", "2025-05-05 13:56:51.913582"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  Rendering products/create.turbo_stream.erb
+  Rendered products/_product.html.erb (Duration: 0.6ms | Allocations: 1207)
+  Rendered products/create.turbo_stream.erb (Duration: 2.7ms | Allocations: 1993)
+Completed 500 Internal Server Error in 11ms (ActiveRecord: 1.0ms | Allocations: 6577)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `product' for an instance of #<Class:0x00000001215dcee8>):
+    1: <p> <%= link_to product.name, product_path(product)  %> <span> $ <%= product.price %> </span>
+    2: <%= link_to "Edit", edit_product_path(product) if params[:action] == "show"%>
+    3: <%= link_to "Delete", product_path(product), data: {turbo_method: :delete, turbo_confirm: "Are you sure?"} if params[:action] == "show" %>
+  
+app/views/products/_product.html.erb:1
+app/views/products/create.turbo_stream.erb:1
+Started GET "/products" for ::1 at 2025-05-05 08:58:24 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [13 times] (Duration: 0.5ms | Allocations: 641)
+  Rendered products/index.html.erb within layouts/application (Duration: 3.3ms | Allocations: 4727)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 4562)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 32636)
+Completed 200 OK in 19ms (Views: 16.4ms | ActiveRecord: 1.4ms | Allocations: 34718)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 08:58:26 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 1.0ms | Allocations: 732)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 1.8ms | Allocations: 1043)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 2.1ms | Allocations: 1264)
+Completed 200 OK in 25ms (Views: 2.8ms | ActiveRecord: 0.4ms | Allocations: 3843)
+
+
+Started GET "/products/14" for ::1 at 2025-05-05 08:58:43 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:51:in `set_product'
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/show.html.erb within layouts/turbo_rails/frame
+  Rendered products/_product.html.erb (Duration: 0.7ms | Allocations: 252)
+  Rendered products/show.html.erb within layouts/turbo_rails/frame (Duration: 1.4ms | Allocations: 463)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.6ms | Allocations: 564)
+Completed 200 OK in 6ms (Views: 2.1ms | ActiveRecord: 0.2ms | Allocations: 1837)
+
+
+Started GET "/products/14" for ::1 at 2025-05-05 08:58:43 -0500
+Processing by ProductsController#show as HTML
+  Parameters: {"id"=>"14"}
+  [1m[36mProduct Load (0.2ms)[0m  [1m[34mSELECT "products".* FROM "products" WHERE "products"."id" = ? LIMIT ?[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/controllers/products_controller.rb:51:in `set_product'
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/show.html.erb within layouts/turbo_rails/frame
+  Rendered products/_product.html.erb (Duration: 0.9ms | Allocations: 106)
+  Rendered products/show.html.erb within layouts/turbo_rails/frame (Duration: 1.2ms | Allocations: 185)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 1.6ms | Allocations: 286)
+Completed 200 OK in 5ms (Views: 2.9ms | ActiveRecord: 0.2ms | Allocations: 864)
+
+
+Started POST "/products" for ::1 at 2025-05-05 08:58:48 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Pan", "price"=>"3.50", "stock"=>"4"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (1.2ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Pan"], ["price", 3.5], ["stock", 4], ["created_at", "2025-05-05 13:58:48.662632"], ["updated_at", "2025-05-05 13:58:48.662632"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  Rendering products/create.turbo_stream.erb
+  Rendered products/_product.html.erb (Duration: 0.2ms | Allocations: 46)
+  Rendered products/create.turbo_stream.erb (Duration: 0.8ms | Allocations: 281)
+Completed 200 OK in 12ms (Views: 1.7ms | ActiveRecord: 2.0ms | Allocations: 4821)
+
+
+Started GET "/products" for ::1 at 2025-05-05 09:00:19 -0500
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Load (0.1ms)[0m  [1m[34mSELECT "products".* FROM "products" ORDER BY "products"."created_at" DESC[0m
+  ↳ app/views/products/index.html.erb:9
+  Rendered collection of products/_product.html.erb [14 times] (Duration: 0.9ms | Allocations: 677)
+  Rendered products/index.html.erb within layouts/application (Duration: 4.2ms | Allocations: 4754)
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/layouts/_navbar.html.erb:9
+  Rendered layouts/_navbar.html.erb (Duration: 3.5ms | Allocations: 4563)
+  Rendered layout layouts/application.html.erb (Duration: 17.8ms | Allocations: 32659)
+Completed 200 OK in 23ms (Views: 19.1ms | ActiveRecord: 1.9ms | Allocations: 34741)
+
+
+Started GET "/products/new" for ::1 at 2025-05-05 09:00:21 -0500
+Processing by ProductsController#new as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb
+  Rendering products/new.html.erb within layouts/turbo_rails/frame
+  Rendered products/_form.html.erb (Duration: 1.0ms | Allocations: 731)
+  Rendered products/new.html.erb within layouts/turbo_rails/frame (Duration: 1.7ms | Allocations: 1042)
+  Rendered layout /Users/sofiaalfaro/.rbenv/versions/3.3.5/lib/ruby/gems/3.3.0/gems/turbo-rails-2.0.13/app/views/layouts/turbo_rails/frame.html.erb (Duration: 2.0ms | Allocations: 1263)
+Completed 200 OK in 11ms (Views: 2.7ms | ActiveRecord: 0.7ms | Allocations: 3855)
+
+
+Started POST "/products" for ::1 at 2025-05-05 09:00:36 -0500
+Processing by ProductsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "product"=>{"name"=>"Dulce", "price"=>"4", "stock"=>"12"}, "commit"=>"Create Product"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? ORDER BY "users"."id" ASC LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mProduct Create (0.5ms)[0m  [1m[32mINSERT INTO "products" ("name", "price", "stock", "created_at", "updated_at", "user_id") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["name", "Dulce"], ["price", 4.0], ["stock", 12], ["created_at", "2025-05-05 14:00:36.523921"], ["updated_at", "2025-05-05 14:00:36.523921"], ["user_id", 1]]
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/products_controller.rb:24:in `create'
+  Rendering products/create.turbo_stream.erb
+  Rendered products/_product.html.erb (Duration: 0.3ms | Allocations: 189)
+  Rendered products/create.turbo_stream.erb (Duration: 0.9ms | Allocations: 481)
+Completed 200 OK in 7ms (Views: 1.3ms | ActiveRecord: 1.0ms | Allocations: 5030)
+
+

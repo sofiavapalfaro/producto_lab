@@ -17,9 +17,18 @@ class ProductsController < ApplicationController
   end
 
   def create
-    @product = Product.new(product_params)
-    @product.save
-    redirect_to product_path(@product)
+    # @product = Product.new(product_params)
+    @product = current_user.products.build(product_params)
+    # @product.user_id = current_user.id
+    # @product.user = current_user
+    if @product.save
+      respond_to do |format|
+        format.html { redirect_to product_path(@product) }
+        format.turbo_stream
+      end
+    else
+      render :new, status: unprocessable_entity
+    end
   end
 
   def edit
